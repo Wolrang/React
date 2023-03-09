@@ -2,7 +2,9 @@ import React from 'react'
 import './Main.css'
 import back from './images/back.jpeg'
 
-const Main = () => {
+const num = [1, 2, 3]
+
+const Main = (props) => {
   return (
     <div>
       <main>
@@ -27,11 +29,19 @@ const Main = () => {
           </section>
 
           <section className='post-box'>
-            <div className='post-card'>
-              <h2></h2>
-              <p className='post-card-txt'></p>
-            </div>
+          {
+            num.map((num, i) => {
+              return (
+                  <div ket={i} className='post-card'>
+                    <h2>Lorem ipsum dolor sit.</h2>
+                    <p className='post-card-txt'> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt quo id qui quibusdam dolores quam perspiciatis accusantium ullam
+                      autem molestiae itaque necessitatibus aut tempora ipsa reiciendis, omnis aspernatur nemo sequi?</p>
+                  </div>
+              )
+            })
+          }
           </section>
+
         </div>
       </main>
     </div>
