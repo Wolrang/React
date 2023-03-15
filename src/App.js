@@ -2,14 +2,14 @@
 import './App.css';
 import Header from './component/Header';
 import Main from './component/Main';
+import Cards from './component/Cards';
 import Footer from './component/Footer';
+import Blog from './component/Blog/Blog';
 
 function App() {
   return (
     <div className="App">
-      <Header></Header>
-      <Main></Main>
-      <Footer></Footer>
+      <Blog></Blog>
     </div>
   );
 }
