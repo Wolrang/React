@@ -1,3 +1,4 @@
+/* eslint-disable */
 import './App.css';
 import Header from './component/Header';
 import Main from './component/Main';
