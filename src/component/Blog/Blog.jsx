@@ -20,12 +20,11 @@ const Blog = () => {
     setTitle(newBlogList);
     console.log(newBlogList);
   }
-  
+
   // 모달창을 띄우기 위한 상태값 / 초기값 = false
   let [modal,setModal] = useState(false);
   // 모달창에 표시될 제목 글의 인덱스 / 초기값 = 0
   let [modalTitle, setModalTitle] = useState(0);
-
 
   return (
     <div>
