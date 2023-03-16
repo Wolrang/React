@@ -11,56 +11,56 @@ const Blog = () => {
 
   let [name, setName] = useState(["이름1", "이름2", "이름3"])
 
-  
-  const [blogList, setBlogList] = useState(title);
+  // 모달창을 띄우기 위한 상태 값
+  let [modal, setModal] = useState(false);
 
-  const deleteList = (index) => {
-    const newBlogList = [...blogList];
-    newBlogList.splice(index, 1);
-    setBlogList(newBlogList);
-    setTitle(newBlogList);
-    console.log(newBlogList);
-  }
-  
-  const [modal, setModal] = useState(false);
+  // 모달창에 표시될 제목 글의 인덱스
+  let [modalTitle, setModalTitle] = useState(0)
+
 
   return (
     <div>
       <div className='nav'>
-        <h1 onClick={()=>{setModal(!modal)}}>BLOG</h1>
+        <h1>BLOG</h1>
       </div>
 
       {
         title.map((item, i) => {
           return (
-            <div className='list' key={i}>
-              <h4>{item}</h4>
+            <div onClick={() => {
+              // if(modal && modalTitle === i) {
+              //   setModal(false) 
+              // } else {
+              //   setModal(true);
+              //   setModalTitle(i)
+              // }
+              return modal && modalTitle === i ? setModal(false) : ((setModal(true), setModalTitle(i)))
+             }} className='list' key={i}>
+              <h4 >{item}</h4>
               <p>안녕하세요. 저는 {name[i]} 입니다.</p>
-              <button onClick={() => {deleteList(i)}}>글삭제</button>
+              <button>글삭제</button>
             </div>
           )
         })
       }
-      
+
       {
-        modal == true ? <Modal></Modal> : null
+      modal && <Modal modalTitle={modalTitle} title={title} closeModal={() => setModal(false)}></Modal>
       }
+
     </div>
   )
 }
 
-function Modal() {
-  
+function Modal(props) {
+
   return (
     <div className='modal'>
-      <h4>Title</h4>
-      <p>Contnet</p>
-      <button>닫기</button>
+      <h4>{props.title[props.modalTitle]}</h4>
+      <p>Content</p>
+      <button onClick={props.closeModal}>닫기</button>
     </div>
   )
 }
-
-
-
 
 export default Blog
