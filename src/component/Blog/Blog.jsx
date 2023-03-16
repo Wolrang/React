@@ -90,4 +90,4 @@ function Modal(props) {
   )
 }
 
-export default Blog
+export default Blog;
