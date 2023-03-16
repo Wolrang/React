@@ -15,8 +15,9 @@ import Card from './component/Card'
 function App() {
   return (
     <div className="App">
-      <Nav></Nav>
-      <Card></Card>
+      <Blog></Blog>
+      {/* <Nav></Nav> */}
+      {/* <Card></Card> */}
       {/* <Button variant="primary">Primary</Button>{' '} */}
       {/* <Header></Header> */}
 
@@ -26,7 +27,6 @@ function App() {
         <Route path='/menu2' element={<Menu2></Menu2>}></Route>
         <Route path='/menu3' element={<h1>menu3 페이지</h1>}></Route>
       </Routes> */}
-      {/* <Blog></Blog> */}
     </div>
   );
 }
