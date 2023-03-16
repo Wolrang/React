@@ -70,7 +70,7 @@ const Blog = () => {
       }
       
       {/*  */}
-      {modal && <Modal modalTitle={modalTitle} title={title} closeModal={()=> setModal(false)}/>}
+      {modal && <Modal modalTitle={modalTitle} title={title} name={name} closeModal={()=> setModal(false)}/>}
     </div>
   )
 }
@@ -80,7 +80,7 @@ function Modal(props){
     <div className='modal'>
       {/*  */}
       <h4>{props.title[props.modalTitle]}</h4>
-      <p>Content</p>
+      <p>안녕하세요 저는 {props.name[props.modalTitle]} 입니다.</p>
       <button onClick={props.closeModal}>닫기</button>
     </div>
   )
