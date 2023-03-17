@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 
 const About = () => {
@@ -19,6 +19,13 @@ const About = () => {
       {/* <Link to='/'>
         <button>Home으로 이동</button>
       </Link> */}
+      <Outlet></Outlet>
+      <Link to='/about/member'>
+        <button>멤버로 이동</button>
+      </Link>
+      <Link to='/about/location'>
+        <button>로케이션으로 이동</button>
+      </Link>
       <button onClick={goHome}>Home으로 이동</button>
     </div>
   )
