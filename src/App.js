@@ -1,32 +1,26 @@
 /* eslint-disable */
 import './App.css';
-import Header from './component/Header';
-import Main from './component/Main';
-import Cards from './component/Cards';
-import Footer from './component/Footer';
+import Header from './component/a태그/Header';
+import Main from './component/a태그/Main';
+import Cards from './component/a태그/Cards';
+import Footer from './component/a태그/Footer';
 import Blog from './component/Blog/Blog';
-import { Routes, Route } from 'react-router-dom';
-import Sub1 from './component/Sub1';
-import Menu2 from './component/Menu2';
-import { Button } from 'react-bootstrap';
-import Nav from './component/Nav'
-import Card from './component/Card'
+import { Routes, Route, Link } from 'react-router-dom';
+import About from './component/Router/About';
+import Home from './component/Router/Home';
 
 function App() {
   return (
     <div className="App">
-      <Blog></Blog>
-      {/* <Nav></Nav> */}
-      {/* <Card></Card> */}
-      {/* <Button variant="primary">Primary</Button>{' '} */}
-      {/* <Header></Header> */}
-
-      {/* <Routes>
-        <Route path='/' element={<Main></Main>}></Route>
-        <Route path='/menu1' element={<h1>menu1 페이지</h1>}></Route>
-        <Route path='/menu2' element={<Menu2></Menu2>}></Route>
-        <Route path='/menu3' element={<h1>menu3 페이지</h1>}></Route>
-      </Routes> */}
+     <Routes>
+      {/* Route안에 속성값이 두개가 들어간다 path/element
+          1. path : 페이지의 주소 URL
+          2. element : path 주소로 이동 했을 때 보여줄 페이지
+          / : 기본경로
+       */}
+      <Route path='/' element={<Home></Home>}></Route>
+      <Route path='/about' element={<About></About>}></Route>
+     </Routes>
     </div>
   );
 }
