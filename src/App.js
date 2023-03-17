@@ -8,6 +8,8 @@ import Blog from './component/Blog/Blog';
 import { Routes, Route, Link } from 'react-router-dom';
 import About from './component/Router/About';
 import Home from './component/Router/Home';
+import Products from './component/Router/Products';
+import ProductDetail from './component/Router/ProductDetail';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
        */}
       <Route path='/' element={<Home></Home>}></Route>
       <Route path='/about' element={<About></About>}></Route>
+      <Route path='/products' element={<Products></Products>}></Route>
+      <Route path='/products/:id' element={<ProductDetail></ProductDetail>}></Route>
      </Routes>
     </div>
   );
